@@ -1,0 +1,5 @@
+- [x] Remove global dark class toggling from use-theme.jsx
+- [x] Update Homepage.jsx to apply theme classes locally based on theme state
+- [x] Update button background in Homepage.jsx
+- [x] Update paragraph text color in Homepage.jsx
+- [x] Fix BentoGrid import to named import
