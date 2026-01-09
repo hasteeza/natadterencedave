@@ -1,4 +1,6 @@
-import { useState, useMemo, useEffect } from "react";
+"use client";
+
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { CircleChevronRight } from "lucide-react";
 import ShinyText from "../components/ShinyText";
@@ -104,8 +106,8 @@ const Heropage = () => {
             data-aos-duration="800"
             data-aos-easing="ease-out-cubic"
             className="
-            uppercase font-extrabold tracking-wide leading-[0.9] text-4xl
-            xs:text-[clamp(3rem,8vw,8rem)]
+            uppercase font-extrabold tracking-wide leading-[0.9] 
+            text-[clamp(2rem,10vw,8rem)]
             [font-family:DrukWide]
           "
             style={{ color: textColor }}
@@ -119,11 +121,12 @@ const Heropage = () => {
             data-aos-delay="400"
             data-aos-duration="800"
             className="
-            uppercase font-extrabold tracking-wider leading-[0.9] text-4xl
-            xs:text-[clamp(3rem,8vw,8rem)]
+            uppercase font-extrabold tracking-wider leading-[0.9] 
+            text-[clamp(2rem,10vw,8rem)]
             text-transparent
             [-webkit-text-stroke:1px_white]
             [font-family:DrukWide]
+            px-4 sm:px-6
           "
           >
             Developer
@@ -156,10 +159,10 @@ const Heropage = () => {
             sm:px-6 sm:py-3 rounded-lg
             bg-neutral-800 text-white
             hover:bg-neutral-900 transition
-            absolute bottom-30 xs:bottom-5
+            absolute bottom-[120px] xs:bottom-5
             border-current
             shadow-2xl
-            z-1000
+            z-[1000]
             pointer-events-auto
           "
         >
