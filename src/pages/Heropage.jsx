@@ -39,7 +39,7 @@ const Heropage = () => {
 
   return (
     <section
-      className="min-h-screen transition-colors duration-500"
+      className="min-h-screen relative transition-colors duration-500"
       style={{ backgroundColor: bgColor }}
     >
       {/* HEADER */}
@@ -79,16 +79,16 @@ const Heropage = () => {
 
       {/* HERO */}
       <main
-        className="relative gap-6 flex flex-col items-center justify-between  
-        min-h-[calc(100vh-80px)] px-6 text-center overflow-hidden "
+        className="relative gap-6 xs:gap-32 flex flex-col items-center justify-evenly  
+        min-h-[calc(100vh-80px)] px-6 text-center"
       >
         {/* INTRO */}
 
         {/* FRONTEND */}
-        <div className="mt-20 flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-4">
           <SplitText
             text="Hello, my name is Terence and I am a"
-            className="text-sm xs:text-2xl font-semibold text-center text-[#ffffff] [font-family:ZTNature]"
+            className="text-sm md:text-[clamp(1rem,2vw,1.5rem)] font-semibold text-center text-[#ffffff] [font-family:ZTNature]"
             delay={50}
             duration={0.5}
             ease="power3.out"
@@ -100,55 +100,40 @@ const Heropage = () => {
             textAlign="center"
             onLetterAnimationComplete={handleAnimationComplete}
           />
-          <h1
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="800"
-            data-aos-easing="ease-out-cubic"
-            className="
-            uppercase font-extrabold tracking-wide leading-[0.9] 
-            text-[clamp(2rem,10vw,8rem)]
+          <div className="space-y-5">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="800"
+              data-aos-easing="ease-out-cubic"
+              className="
+            uppercase font-extrabold tracking-wide leading-[0.9] text-4xl
+            xs:text-[clamp(3rem,8vw,8rem)]
             [font-family:DrukWide]
           "
-            style={{ color: textColor }}
-          >
-            Frontend
-          </h1>
+              style={{ color: textColor }}
+            >
+              Frontend
+            </h1>
 
-          {/* DEVELOPER (outlined) */}
-          <h1
-            data-aos="fade-up"
-            data-aos-delay="400"
-            data-aos-duration="800"
-            className="
-            uppercase font-extrabold tracking-wider leading-[0.9] 
-            text-[clamp(2rem,10vw,8rem)]
+            {/* DEVELOPER (outlined) */}
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="400"
+              data-aos-duration="800"
+              className="
+            uppercase font-extrabold tracking-wider leading-[0.9] text-4xl
+            xs:text-[clamp(3rem,8vw,8rem)]
             text-transparent
             [-webkit-text-stroke:1px_white]
             [font-family:DrukWide]
             px-4 sm:px-6
           "
-          >
-            Developer
-          </h1>
+            >
+              Developer
+            </h1>
+          </div>
         </div>
-
-        {/* IMAGE */}
-        <img
-          fetchPriority="high"
-          data-aos="fade-up"
-          src="/images/deve.png"
-          alt="Developer"
-          loading="lazy"
-          className="
-            absolute bottom-0
-            hidden xs:h-full
-            xs:flex
-            z-10
-            pointer-events-none
-            shrink
-          "
-        />
 
         {/* CTA */}
         <Link
@@ -159,7 +144,7 @@ const Heropage = () => {
             sm:px-6 sm:py-3 rounded-lg
             bg-neutral-800 text-white
             hover:bg-neutral-900 transition
-            absolute bottom-[120px] xs:bottom-5
+            xs:bottom-5
             border-current
             shadow-2xl
             z-[1000]
@@ -169,21 +154,35 @@ const Heropage = () => {
           <ShinyText text="Explore my work" />
           <CircleChevronRight size={18} />
         </Link>
-        <div
-          className="mt-12"
-          style={{ position: "relative", overflow: "hidden" }}
-        >
-          {/* Basic horizontal loop */}
-          <LogoLoop
-            logos={techLogos}
-            direction="left"
-            color="#ffffff"
-            gap={40}
-            className="[--logoloop-logoHeight:48px] max-sm:[--logoloop-logoHeight:24px]"
-            ariaLabel="Technology partners"
-          />
-        </div>
       </main>
+      <img
+        fetchPriority="high"
+        data-aos="fade-up"
+        src="/images/deve.png"
+        alt="Developer"
+        loading="lazy"
+        className="
+            top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            absolute 
+            xs:h-full
+            hidden
+            xs:inline-block
+            z-10
+            object-contain
+            shrink
+          "
+      />
+      <footer>
+        {" "}
+        <LogoLoop
+          logos={techLogos}
+          direction="left"
+          color="#ffffff"
+          gap={40}
+          className="[--logoloop-logoHeight:48px] max-sm:[--logoloop-logoHeight:24px]"
+          ariaLabel="Technology partners"
+        />
+      </footer>
     </section>
   );
 };

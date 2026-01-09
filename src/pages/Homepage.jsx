@@ -14,6 +14,7 @@ import {
   IoLogoNpm,
   IoLogoFigma,
   IoBriefcase,
+  IoBookOutline,
 } from "react-icons/io5";
 import { BentoCard } from "../components/BentoCard.jsx";
 import { BentoGrid } from "../components/BentoGrid.jsx";
@@ -34,18 +35,18 @@ export default function Homepage() {
 
   const experienceSteps = [
     {
-      title: "Principal AI Engineer",
-      subtitle: "Standard Chartered",
+      title: "Professional Tambay",
+      subtitle: "Sa Bahay Lang",
+      year: "2026",
+    },
+    {
+      title: "BS Information Technology",
+      subtitle: "Western Mindanao State University",
       year: "2025",
     },
     {
-      title: "AI Ops Engineer",
-      subtitle: "Centre of Excellence for GenAI, Cambridge",
-      year: "2025",
-    },
-    {
-      title: "Senior Full-Stack Developer",
-      subtitle: "Core Technology, Cambridge",
+      title: "Hello World!",
+      subtitle: "Wrote my first lines of code",
       year: "2024",
     },
   ];
@@ -331,7 +332,16 @@ export default function Homepage() {
               theme={theme}
               className="p-4 col-span-1 md:col-span-2 space-y-2"
             >
-              <h3 className="font-semibold">Experience</h3>
+              <div className="inline-flex items-center gap-2">
+                <IoBookOutline className="w-4 h-4" />
+                <h3 className="font-semibold text-lg">Beyond Coding</h3>
+              </div>
+              <div>
+                <p className="text-sm leading-relaxed mt-2">
+                  When I'm not coding, I spend my time studying how components
+                  and design work together to create great user experiences.
+                </p>
+              </div>
             </BentoCard>
             <BentoCard
               theme={theme}
@@ -344,7 +354,10 @@ export default function Homepage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
-                <BentoCard theme={theme} className="p-3 space-y-1">
+                <BentoCard
+                  theme={theme}
+                  className="p-3 space-y-1 hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                >
                   <a
                     target="_blank"
                     className="block space-y-1"
@@ -363,11 +376,14 @@ export default function Homepage() {
                     </p>
                   </a>
                 </BentoCard>
-                <BentoCard theme={theme}>
+                <BentoCard
+                  className="p-3 space-y-1 hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                  theme={theme}
+                >
                   {" "}
                   <a
                     target="_blank"
-                    className="block space-y-1"
+                    className="block space-y-1 "
                     href="https://tdrn-pokeweb.netlify.app/"
                   >
                     <h3 className="text-sm font-semibold">PokeWeb</h3>
@@ -381,7 +397,10 @@ export default function Homepage() {
                     </p>
                   </a>{" "}
                 </BentoCard>
-                <BentoCard theme={theme}>
+                <BentoCard
+                  className="p-3 space-y-1 hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                  theme={theme}
+                >
                   {" "}
                   <a
                     target="_blank"

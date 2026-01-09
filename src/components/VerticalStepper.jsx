@@ -54,7 +54,7 @@ export default function VerticalStepper({
 
                   {step.year && (
                     <span
-                      className={`rounded-full border px-2 py-0.5 text-[10px] font-medium ${
+                      className={`rounded-full border px-2 py-0.5 text-[10px] font-medium font-mono ${
                         theme === "light"
                           ? "border-[#EAEAEA]  text-black"
                           : "border-[#222222]  text-white"
