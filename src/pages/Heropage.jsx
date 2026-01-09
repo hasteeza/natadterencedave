@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CircleChevronRight } from "lucide-react";
 import ShinyText from "../components/ShinyText";
@@ -139,7 +139,7 @@ const Heropage = () => {
           loading="lazy"
           className="
             absolute bottom-0
-            h-full
+            h-3/4 xs:h-full
             z-10
             pointer-events-none
             shrink
