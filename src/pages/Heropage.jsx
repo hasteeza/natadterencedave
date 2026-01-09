@@ -5,7 +5,7 @@ import ShinyText from "../components/ShinyText";
 import { SiReact, SiGithub, SiVercel, SiTailwindcss } from "react-icons/si";
 import LogoLoop from "../components/LogoLoop";
 import SplitText from "../components/SplitText";
-import { useTheme } from "../hooks/use-theme";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Heropage = () => {
   const { theme } = useTheme();
@@ -77,7 +77,7 @@ const Heropage = () => {
 
       {/* HERO */}
       <main
-        className="relative gap-6 flex flex-col items-center justify-between 
+        className="relative gap-6 flex flex-col items-center justify-between  
         min-h-[calc(100vh-80px)] px-6 text-center overflow-hidden "
       >
         {/* INTRO */}
@@ -139,7 +139,8 @@ const Heropage = () => {
           loading="lazy"
           className="
             absolute bottom-0
-            h-3/4 xs:h-full
+            hidden xs:h-full
+            xs:flex
             z-10
             pointer-events-none
             shrink
@@ -150,15 +151,16 @@ const Heropage = () => {
         <Link
           to="/home"
           className="
-            mt-44 inline-flex items-center gap-2
+            inline-flex items-center gap-2
             px-4 py-2 text-xs md:text-base
             sm:px-6 sm:py-3 rounded-lg
             bg-neutral-800 text-white
             hover:bg-neutral-900 transition
-            absolute bottom-10
+            absolute bottom-30 xs:bottom-5
             border-current
             shadow-2xl
             z-1000
+            pointer-events-auto
           "
         >
           <ShinyText text="Explore my work" />

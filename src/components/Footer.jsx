@@ -1,10 +1,24 @@
 import React from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Footer = () => {
+  const { theme } = useTheme();
+  console.log("Footer theme:", theme);
+
   return (
-    <section className="max-w-4xl mx-auto px-4 py-8 border-t border-[#222222] mt-12">
+    <section
+      className={`max-w-4xl mx-auto px-4 py-8 border-t mt-12 ${
+        theme === "dark" ? "border-[#222222]" : "border-[#EAEAEA]"
+      }`}
+    >
       <div className="flex items-center justify-center">
-        <p className="text-sm">© Designed and Built by Terence</p>
+        <p
+          className={`text-sm ${
+            theme === "light" ? "text-black" : "text-white"
+          }`}
+        >
+          © Designed and Built by Terence
+        </p>
       </div>
     </section>
   );

@@ -3,3 +3,4 @@
 - [x] Update button background in Homepage.jsx
 - [x] Update paragraph text color in Homepage.jsx
 - [x] Fix BentoGrid import to named import
+- [x] Update project URL badge backgrounds in Homepage.jsx to be theme-aware
