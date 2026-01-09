@@ -17,7 +17,7 @@ const Footer = () => {
             theme === "light" ? "text-black" : "text-white"
           }`}
         >
-          © Designed and Built by Terence
+          © 2026 Terence Dave Natad. All Rights Reserved
         </p>
       </div>
     </section>
