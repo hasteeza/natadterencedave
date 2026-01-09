@@ -1,11 +1,11 @@
-"use client";
-import { useTheme } from "../hooks/use-theme";
+import { useTheme } from "../contexts/ThemeContext";
 import { motion, useReducedMotion } from "framer-motion";
 import { Calendar, Mail, Download, MapPin } from "lucide-react";
 import { RiStackLine, RiTailwindCssFill } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
 import { SiNetlify } from "react-icons/si";
 import { SlPicture } from "react-icons/sl";
+import { LuComputer } from "react-icons/lu";
 import {
   IoLogoReact,
   IoLogoJavascript,
@@ -69,7 +69,7 @@ export default function Homepage() {
         {/* PROFILE */}
         <motion.section
           variants={fadeUp}
-          initial="hidden"
+          initial="visible"
           animate="visible"
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="mb-10"
@@ -337,7 +337,69 @@ export default function Homepage() {
               theme={theme}
               className="p-4 col-span-1 md:col-span-4 space-y-2"
             >
-              <h3 className="font-semibold">Experience</h3>
+              <div>
+                <div className="inline-flex items-center gap-2">
+                  <LuComputer className="w-4 h-4" />
+                  <h3 className="font-semibold text-lg">Projects</h3>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                <BentoCard theme={theme} className="p-3 space-y-1">
+                  <a
+                    target="_blank"
+                    className="block space-y-1"
+                    href="https://tdrn-scientific-calculator.netlify.app/"
+                  >
+                    <h3 className="text-sm font-semibold">
+                      Scientific Calculator
+                    </h3>
+                    <p className="text-xs">Online Sci-Cal</p>
+                    <p
+                      className={`text-xs text-foreground/50 ${
+                        theme === "dark" ? "bg-black" : "bg-[#EAEAEA]"
+                      } font-mono px-2 py-1 rounded-md inline-block mt-1`}
+                    >
+                      sci-cal.netlify.app
+                    </p>
+                  </a>
+                </BentoCard>
+                <BentoCard theme={theme}>
+                  {" "}
+                  <a
+                    target="_blank"
+                    className="block space-y-1"
+                    href="https://tdrn-pokeweb.netlify.app/"
+                  >
+                    <h3 className="text-sm font-semibold">PokeWeb</h3>
+                    <p className="text-xs">Online Pokedex</p>
+                    <p
+                      className={`text-xs text-foreground/50 ${
+                        theme === "dark" ? "bg-black" : "bg-[#EAEAEA]"
+                      } font-mono px-2 py-1 rounded-md inline-block mt-1`}
+                    >
+                      pokeweb.netlify.app
+                    </p>
+                  </a>{" "}
+                </BentoCard>
+                <BentoCard theme={theme}>
+                  {" "}
+                  <a
+                    target="_blank"
+                    className="block space-y-1"
+                    href="https://tdrn-blog.netlify.app/"
+                  >
+                    <h3 className="text-sm font-semibold">IVET</h3>
+                    <p className="text-xs">Industry Visit Educational Tour</p>
+                    <p
+                      className={`text-xs text-foreground/50 ${
+                        theme === "dark" ? "bg-black" : "bg-[#EAEAEA]"
+                      } font-mono px-2 py-1 rounded-md inline-block mt-1`}
+                    >
+                      ivet.netlify.app
+                    </p>
+                  </a>{" "}
+                </BentoCard>
+              </div>
             </BentoCard>
             <BentoCard
               theme={theme}
@@ -352,7 +414,7 @@ export default function Homepage() {
                 <div className="mt-4">
                   <ImageMarquee
                     images={images}
-                    speed={40}
+                    speed={100}
                     containerClassName="py-2"
                     imageClassName="hover:scale-105 transition"
                   />
