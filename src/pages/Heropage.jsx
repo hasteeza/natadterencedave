@@ -86,7 +86,7 @@ const Heropage = () => {
         <div className="mt-20 flex flex-col items-center gap-6">
           <SplitText
             text="Hello, my name is Terence and I am a"
-            className="text-2xl font-semibold text-center text-[#ffffff] [font-family:ZTNature]"
+            className="text-sm xs:text-2xl font-semibold text-center text-[#ffffff] [font-family:ZTNature]"
             delay={50}
             duration={0.5}
             ease="power3.out"
@@ -104,8 +104,8 @@ const Heropage = () => {
             data-aos-duration="800"
             data-aos-easing="ease-out-cubic"
             className="
-            uppercase font-extrabold tracking-wide leading-[0.9]
-            text-[clamp(3rem,8vw,8rem)]
+            uppercase font-extrabold tracking-wide leading-[0.9] text-4xl
+            xs:text-[clamp(3rem,8vw,8rem)]
             [font-family:DrukWide]
           "
             style={{ color: textColor }}
@@ -119,8 +119,8 @@ const Heropage = () => {
             data-aos-delay="400"
             data-aos-duration="800"
             className="
-            uppercase font-extrabold tracking-wider leading-[0.9]
-            text-[clamp(3rem,8vw,8rem)]
+            uppercase font-extrabold tracking-wider leading-[0.9] text-4xl
+            xs:text-[clamp(3rem,8vw,8rem)]
             text-transparent
             [-webkit-text-stroke:1px_white]
             [font-family:DrukWide]
@@ -142,6 +142,7 @@ const Heropage = () => {
             h-full
             z-10
             pointer-events-none
+            shrink
           "
         />
 
@@ -150,7 +151,8 @@ const Heropage = () => {
           to="/home"
           className="
             mt-44 inline-flex items-center gap-2
-            px-6 py-3 rounded-lg
+            px-4 py-2 text-xs md:text-base
+            sm:px-6 sm:py-3 rounded-lg
             bg-neutral-800 text-white
             hover:bg-neutral-900 transition
             absolute bottom-10
@@ -170,9 +172,9 @@ const Heropage = () => {
           <LogoLoop
             logos={techLogos}
             direction="left"
-            logoHeight={48}
             color="#ffffff"
             gap={40}
+            className="[--logoloop-logoHeight:48px] max-sm:[--logoloop-logoHeight:24px]"
             ariaLabel="Technology partners"
           />
         </div>
