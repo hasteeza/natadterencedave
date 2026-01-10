@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { motion, useReducedMotion } from "framer-motion";
 import { Calendar, Mail, Download, MapPin } from "lucide-react";
-import { RiStackLine, RiTailwindCssFill } from "react-icons/ri";
+import {
+  RiStackLine,
+  RiTailwindCssFill,
+  RiContactsBook3Line,
+} from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
 import { SiNetlify } from "react-icons/si";
 import { SlPicture } from "react-icons/sl";
-import { LuComputer } from "react-icons/lu";
+import { LuComputer, LuBadgeCheck } from "react-icons/lu";
+import { CiLinkedin } from "react-icons/ci";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { HiOutlineLinkSlash } from "react-icons/hi2";
 import {
   IoLogoReact,
   IoLogoJavascript,
@@ -15,6 +23,7 @@ import {
   IoLogoFigma,
   IoBriefcase,
   IoBookOutline,
+  IoLogoInstagram,
 } from "react-icons/io5";
 import { BentoCard } from "../components/BentoCard.jsx";
 import { BentoGrid } from "../components/BentoGrid.jsx";
@@ -70,7 +79,7 @@ export default function Homepage() {
         {/* PROFILE */}
         <motion.section
           variants={fadeUp}
-          initial="visible"
+          initial="hidden"
           animate="visible"
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="mb-10"
@@ -84,8 +93,8 @@ export default function Homepage() {
               decoding="async"
               src={
                 theme === "dark"
-                  ? "/images/dave-dark.jpg"
-                  : "/images/dave-light.jpg"
+                  ? "/images/me-in-pm.jpg"
+                  : "/images/me-in-am.jpg"
               }
               alt="Portrait of Terence Dave Natad"
               className="rounded-lg object-cover
@@ -418,6 +427,150 @@ export default function Homepage() {
                     </p>
                   </a>{" "}
                 </BentoCard>
+              </div>
+            </BentoCard>
+            <BentoCard
+              theme={theme}
+              className="p-4 col-span-1 md:col-span-4 space-y-2"
+            >
+              <div>
+                <div className="inline-flex items-center gap-2">
+                  <LuBadgeCheck />
+                  <h2 className="text-lg font-bold">Certifications</h2>
+                </div>
+                <div className="grid grid-cols-1 gap-2 mt-2">
+                  <a
+                    target="_blank"
+                    className={`block p-2 rounded-md transition-colors ${
+                      theme === "dark"
+                        ? "bg-black hover:bg-gray-900 "
+                        : "bg-[#EAEAEA] hover:bg-gray-300"
+                    } `}
+                    href="https://www.freecodecamp.org/certification/fcc21caa065-c80a-4fbe-9fb6-585b84f639a2/responsive-web-design"
+                  >
+                    <h3 className="font-semibold text-sm">
+                      Responsive Web Design
+                    </h3>
+                    <p className="text-[11px]">freeCodeCamp</p>
+                  </a>
+                  <a
+                    target="_blank"
+                    className={`block p-2 rounded-md transition-colors ${
+                      theme === "dark"
+                        ? "bg-black hover:bg-gray-900"
+                        : "bg-[#EAEAEA] hover:bg-gray-300"
+                    } `}
+                    href="https://www.linkedin.com/learning/certificates/c7c1b465aa770722c0ab57b4b62ba1b92f35cc353b97cede8e8042582e6f95fd?trk=share_certificate"
+                  >
+                    <h3 className="font-semibold text-sm">Learn CSS</h3>
+                    <p className="text-[11px]">LinkedIn</p>
+                  </a>
+                  <a
+                    target="_blank"
+                    className={`block p-2 rounded-md transition-colors ${
+                      theme === "dark"
+                        ? "bg-black hover:bg-gray-900"
+                        : "bg-[#EAEAEA] hover:bg-gray-300"
+                    } `}
+                    href="https://www.linkedin.com/learning/certificates/d4267231d69763d1703201b77133538f5fb63e381ba5ae1f8cd7803136d7dee2?trk=share_certificate"
+                  >
+                    <h3 className="font-semibold text-sm">
+                      Advance Your Skills in HTML
+                    </h3>
+                    <p className="text-[11px]">LinkedIn</p>
+                  </a>
+                  <a
+                    href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzI1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODE0ODEyM184NDgzNDA1MTc0MzkyMTE3NjA4NC5wbmciLCJ1c2VybmFtZSI6IlRlcmVuY2UgRGF2ZSBSLiBOYXRhZCJ9&utm_source=shared-certificate&utm_medium=app_lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Fcertificates.simplicdn.net%2Fshare%2F8148123_84834051743921176084.png&_branch_match_id=1538565048215986113&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1veqiCp0TvQvMQ1Osq8rSk1LLSrKzEuPTyrKLy9OLbL1AapJTfHMAwCTmDkCPwAAAA%3D%3D"
+                    target="_blank"
+                    className={`block p-2 rounded-md transition-colors ${
+                      theme === "dark"
+                        ? "bg-black hover:bg-gray-900"
+                        : "bg-[#EAEAEA] hover:bg-gray-300"
+                    } `}
+                  >
+                    <h3 className="font-semibold text-sm">
+                      ReactJS for Beginners
+                    </h3>
+                    <p className="text-[11px]">simplilearn</p>
+                  </a>
+                </div>
+              </div>
+            </BentoCard>
+            <BentoCard
+              theme={theme}
+              className="p-4 col-span-1 md:col-span-2 space-y-2"
+            >
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2">
+                  <HiOutlineLinkSlash className="w-4 h-4" />
+                  <h3 className="text-lg font-semibold">Social Links</h3>
+                </div>
+                <div className="grid grid-cols-1 gap-2 mt-2">
+                  <a
+                    className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                    href="https://www.linkedin.com/in/terence-dave-natad-952b3b359/"
+                    target="_blank"
+                  >
+                    <CiLinkedin /> <span className="text-sm">Linkedin</span>
+                  </a>
+                  <a
+                    className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                    href="https://github.com/hasteeza"
+                    target="_blank"
+                  >
+                    {" "}
+                    <IoLogoGithub />
+                    <span className="text-sm">GitHub</span>
+                  </a>
+                  <a
+                    className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                    href="https://www.instagram.com/daevious404/"
+                    target="_blank"
+                  >
+                    <IoLogoInstagram />
+                    <span className="text-sm">Instagram</span>
+                  </a>
+                </div>
+              </div>
+              <div className="mt-4">
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <RiContactsBook3Line />
+                  <h3 className="font-semibold text-sm">Contact</h3>
+                </div>{" "}
+                <div className="grid grid-cols-1 gap-2">
+                  {" "}
+                  <a
+                    className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                    href=""
+                  >
+                    <div className="text-[9px]">
+                      <div className="inline-flex items-center gap-2">
+                        <Mail className="w-3 h-3" />
+                        Email
+                      </div>
+                      <div className="flex justify-between items-center gap-2">
+                        <p className="">natadterencedave@gmail.com</p>
+                        <MdOutlineKeyboardArrowRight />
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                    href=""
+                  >
+                    <div className="text-[9px]">
+                      <div className="inline-flex items-center gap-2">
+                        <Calendar className="w-3 h-3" />
+                        Let's Talk
+                      </div>
+                      <div className="flex justify-between items-center gap-2">
+                        {" "}
+                        <p className="">Schedule a Call</p>
+                        <MdOutlineKeyboardArrowRight />
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </BentoCard>
             <BentoCard

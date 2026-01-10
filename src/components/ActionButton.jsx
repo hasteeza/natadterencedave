@@ -1,8 +1,27 @@
 export function ActionButton({ icon: Icon, label, theme }) {
   const isScheduleCall = label === "Schedule a Call";
+  const isSendEmail = label === "Send Email";
+  const isDownloadResume = label === "Download Resume";
+
+  let href = "";
+  let target = "";
+  let download = "";
+
+  if (isScheduleCall) {
+    href = "https://calendly.com/natadterencedave";
+    target = "_blank";
+  } else if (isSendEmail) {
+    href = "mailto:natadterencedave@gmail.com";
+  } else if (isDownloadResume) {
+    href = "/resume.pdf"; // Assuming resume is placed in public/resume.pdf
+    download = "Terence_Dave_Natad_Resume.pdf";
+  }
+
   return (
     <a
-      href="#"
+      href={href}
+      target={target}
+      download={download}
       aria-label={label}
       className={`inline-flex items-center gap-2 rounded-lg px-2.5 py-2
         text-[8px] md:text-xs font-medium transition-all duration-200
