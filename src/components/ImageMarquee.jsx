@@ -14,7 +14,7 @@ const ImageMarquee = ({
 
       {/* Marquee */}
       <div
-        className="flex w-max gap-4 animate-marquee group-hover:[animation-play-state:paused]"
+        className="flex w-max gap-4 animate-marquee"
         style={{ animationDuration: `${speed}s` }}
       >
         {[...images, ...images].map((img, index) => (

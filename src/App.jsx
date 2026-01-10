@@ -1,11 +1,22 @@
 import { React, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Heropage from "./pages/Heropage";
 import Homepage from "./pages/Homepage";
 import AOS from "aos";
 import "./index.css";
+import { useTheme } from "./contexts/ThemeContext";
+import { useHeroBg } from "./contexts/HeroBgContext";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const { theme } = useTheme();
+  const { heroBgColor } = useHeroBg();
+
   useEffect(() => {
     AOS.init({
       duration: 800, // animation duration (ms)
@@ -15,15 +26,28 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    if (location.pathname === "/") {
+      document.body.style.backgroundColor = heroBgColor;
+    } else if (location.pathname === "/home") {
+      document.body.style.backgroundColor =
+        theme === "dark" ? "black" : "white";
+    }
+  }, [location.pathname, theme, heroBgColor]);
+
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Heropage />} />
-          <Route path="/home" element={<Homepage />} />
-        </Routes>
-      </Router>
-    </>
+    <Routes>
+      <Route path="/" element={<Heropage />} />
+      <Route path="/home" element={<Homepage />} />
+    </Routes>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { CircleChevronRight } from "lucide-react";
 import ShinyText from "../components/ShinyText";
@@ -8,15 +8,15 @@ import { SiReact, SiGithub, SiVercel, SiTailwindcss } from "react-icons/si";
 import LogoLoop from "../components/LogoLoop";
 import SplitText from "../components/SplitText";
 import { useTheme } from "../contexts/ThemeContext";
+import { useHeroBg } from "../contexts/HeroBgContext";
 
 const Heropage = () => {
   const { theme } = useTheme();
-  const [bgColor, setBgColor] = useState("#3F5563");
-  const [textColor, setTextColor] = useState("#ffffff");
+  const { heroBgColor, setHeroBgColor } = useHeroBg();
+  const textColor = "#ffffff";
 
   const changeTheme = (bg, text) => {
-    setBgColor(bg);
-    setTextColor(text);
+    setHeroBgColor(bg);
   };
 
   const techLogos = useMemo(
@@ -38,22 +38,19 @@ const Heropage = () => {
   };
 
   return (
-    <section
-      className="min-h-screen relative transition-colors duration-500"
-      style={{ backgroundColor: bgColor }}
-    >
+    <section className="min-h-screen relative transition-colors duration-500">
       {/* HEADER */}
       <header
         data-aos="fade-down"
         data-aos-duration="800"
         data-aos-easing="ease-out-cubic"
-        className="flex justify-between items-center 
+        className="flex justify-between items-center
         px-6 md:px-20 py-6"
-        style={{ backgroundColor: bgColor }}
+        style={{ backgroundColor: heroBgColor }}
       >
         <h1
           className="text-lg font-medium [font-family:DrukWide]"
-          style={{ color: textColor }}
+          style={{ color: "#ffffff" }}
         >
           TDRN
         </h1>
