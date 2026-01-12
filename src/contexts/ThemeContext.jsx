@@ -8,20 +8,41 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem("theme");
+    // Check for saved theme in localStorage, fallback to system preference
+    const savedTheme = localStorage.getItem("theme");
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
       : "light";
-    const initialTheme = stored || systemTheme;
 
+    const initialTheme = savedTheme || systemTheme;
     setTheme(initialTheme);
+    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+
+    // Listen for system theme changes only if no user preference is saved
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      const newSystemTheme = e.matches ? "dark" : "light";
+      // Only update if no user preference is saved
+      if (!localStorage.getItem("theme")) {
+        setTheme(newSystemTheme);
+        document.documentElement.classList.toggle(
+          "dark",
+          newSystemTheme === "dark"
+        );
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
   return (
