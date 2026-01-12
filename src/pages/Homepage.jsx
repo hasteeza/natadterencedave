@@ -98,7 +98,7 @@ export default function Homepage() {
               }
               alt="Portrait of Terence Dave Natad"
               className="rounded-lg object-cover
-                w-40 h-40 
+                w-40 h-40
                 shrink-0
                 "
             />
@@ -116,9 +116,9 @@ export default function Homepage() {
                   <button
                     onClick={toggleTheme}
                     className={`group flex items-center gap-1 px-1 py-0.5 rounded-lg border transition-all duration-300 focus:outline-none hover:scale-105 hover:shadow-lg cursor-pointer ${
-                      theme === "light"
-                        ? "bg-white border-black text-black hover:bg-black hover:text-white"
-                        : "bg-[#111111] border-gray-300 text-white hover:bg-white hover:text-black"
+                      theme === "dark"
+                        ? "border-[#222222] bg-[#111111] text-white hover:bg-white hover:text-black"
+                        : "border-gray-300 bg-white text-black hover:bg-black hover:text-white"
                     }`}
                     aria-label="Toggle theme"
                   >
@@ -156,7 +156,7 @@ export default function Homepage() {
               {/* Location */}
               <p
                 className={`mt-1 flex items-center gap-1 text-xs sm:text-sm ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
                 }`}
               >
                 <MapPin className="w-3 h-3 shrink-0" />
@@ -253,7 +253,7 @@ export default function Homepage() {
                   <IoBriefcase className="w-4 h-4" />
                   <h2
                     className={`text-lg font-bold ${
-                      theme === "light" ? "text-black" : "text-white"
+                      theme === "dark" ? "text-white" : "text-black"
                     }`}
                   >
                     Experience
@@ -281,15 +281,33 @@ export default function Homepage() {
                 <div>
                   <h3 className="font-semibold text-sm mb-2">Frontend</h3>
                   <div className=" flex flex-wrap gap-1.5">
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <IoLogoReact className="text-[#61DAFB]" />
                       React
                     </span>
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <IoLogoJavascript className="text-yellow-400" />
                       Javascript
                     </span>
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <RiTailwindCssFill className="text-[#06B6D4]" />
                       Tailwind Css
                     </span>
@@ -300,11 +318,23 @@ export default function Homepage() {
                     DevOps / Deployment
                   </h3>
                   <div className=" flex flex-wrap gap-1.5">
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <IoLogoVercel />
                       Vercel
                     </span>
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <SiNetlify />
                       Netlify
                     </span>
@@ -315,19 +345,43 @@ export default function Homepage() {
                     Tools / Utilities
                   </h3>
                   <div className=" flex flex-wrap gap-1.5">
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <IoLogoNpm />
                       npm
                     </span>
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <IoLogoGithub />
                       GitHub
                     </span>
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <VscVscode className="text-[#007ACC]" />
                       VS Code
                     </span>
-                    <span className="inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md bg-foreground/5 border border-foreground/10">
+                    <span
+                      className={`inline-flex items-center gap-2 text-xs px-2 py-0.5 rounded-md ${
+                        theme === "dark"
+                          ? "bg-gray-950 border-gray-600 text-white"
+                          : "bg-gray-100 border-gray-300 text-black"
+                      }`}
+                    >
                       <IoLogoFigma />
                       Figma
                     </span>
@@ -377,9 +431,11 @@ export default function Homepage() {
                     </h3>
                     <p className="text-xs">Online Sci-Cal</p>
                     <p
-                      className={`text-xs text-foreground/50 ${
-                        theme === "dark" ? "bg-black" : "bg-[#EAEAEA]"
-                      } font-mono px-2 py-1 rounded-md inline-block mt-1`}
+                      className={`text-xs font-mono px-2 py-1 rounded-md inline-block mt-1 ${
+                        theme === "dark"
+                          ? "text-white bg-black"
+                          : "text-black bg-[#EAEAEA]"
+                      }`}
                     >
                       sci-cal.netlify.app
                     </p>
@@ -398,9 +454,11 @@ export default function Homepage() {
                     <h3 className="text-sm font-semibold">PokeWeb</h3>
                     <p className="text-xs">Online Pokedex</p>
                     <p
-                      className={`text-xs text-foreground/50 ${
-                        theme === "dark" ? "bg-black" : "bg-[#EAEAEA]"
-                      } font-mono px-2 py-1 rounded-md inline-block mt-1`}
+                      className={`text-xs font-mono px-2 py-1 rounded-md inline-block mt-1 ${
+                        theme === "dark"
+                          ? "text-white bg-black"
+                          : "text-black bg-[#EAEAEA]"
+                      }`}
                     >
                       pokeweb.netlify.app
                     </p>
@@ -419,9 +477,11 @@ export default function Homepage() {
                     <h3 className="text-sm font-semibold">IVET</h3>
                     <p className="text-xs">Industry Visit Educational Tour</p>
                     <p
-                      className={`text-xs text-foreground/50 ${
-                        theme === "dark" ? "bg-black" : "bg-[#EAEAEA]"
-                      } font-mono px-2 py-1 rounded-md inline-block mt-1`}
+                      className={`text-xs font-mono px-2 py-1 rounded-md inline-block mt-1 ${
+                        theme === "dark"
+                          ? "text-white bg-black"
+                          : "text-black bg-[#EAEAEA]"
+                      }`}
                     >
                       ivet.netlify.app
                     </p>
@@ -443,9 +503,9 @@ export default function Homepage() {
                     target="_blank"
                     className={`block p-2 rounded-md transition-colors ${
                       theme === "dark"
-                        ? "bg-black hover:bg-gray-900 "
-                        : "bg-[#EAEAEA] hover:bg-gray-300"
-                    } `}
+                        ? "bg-black hover:bg-gray-900"
+                        : "bg-[#F3F4F6] hover:bg-gray-200"
+                    }`}
                     href="https://www.freecodecamp.org/certification/fcc21caa065-c80a-4fbe-9fb6-585b84f639a2/responsive-web-design"
                   >
                     <h3 className="font-semibold text-sm">
@@ -458,8 +518,8 @@ export default function Homepage() {
                     className={`block p-2 rounded-md transition-colors ${
                       theme === "dark"
                         ? "bg-black hover:bg-gray-900"
-                        : "bg-[#EAEAEA] hover:bg-gray-300"
-                    } `}
+                        : "bg-[#F3F4F6] hover:bg-gray-200"
+                    }`}
                     href="https://www.linkedin.com/learning/certificates/c7c1b465aa770722c0ab57b4b62ba1b92f35cc353b97cede8e8042582e6f95fd?trk=share_certificate"
                   >
                     <h3 className="font-semibold text-sm">Learn CSS</h3>
@@ -470,8 +530,8 @@ export default function Homepage() {
                     className={`block p-2 rounded-md transition-colors ${
                       theme === "dark"
                         ? "bg-black hover:bg-gray-900"
-                        : "bg-[#EAEAEA] hover:bg-gray-300"
-                    } `}
+                        : "bg-[#F3F4F6] hover:bg-gray-200"
+                    }`}
                     href="https://www.linkedin.com/learning/certificates/d4267231d69763d1703201b77133538f5fb63e381ba5ae1f8cd7803136d7dee2?trk=share_certificate"
                   >
                     <h3 className="font-semibold text-sm">
@@ -485,8 +545,8 @@ export default function Homepage() {
                     className={`block p-2 rounded-md transition-colors ${
                       theme === "dark"
                         ? "bg-black hover:bg-gray-900"
-                        : "bg-[#EAEAEA] hover:bg-gray-300"
-                    } `}
+                        : "bg-[#F3F4F6] hover:bg-gray-200"
+                    }`}
                   >
                     <h3 className="font-semibold text-sm">
                       ReactJS for Beginners
@@ -541,7 +601,7 @@ export default function Homepage() {
                   {" "}
                   <a
                     className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href=""
+                    href="mailto:natadterencedave@gmail.com"
                   >
                     <div className="text-[9px]">
                       <div className="inline-flex items-center gap-2">
@@ -556,7 +616,7 @@ export default function Homepage() {
                   </a>
                   <a
                     className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href=""
+                    href="https://calendly.com/natadterencedave"
                   >
                     <div className="text-[9px]">
                       <div className="inline-flex items-center gap-2">

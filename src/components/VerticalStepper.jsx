@@ -7,8 +7,8 @@ export default function VerticalStepper({
     <div className="relative">
       {/* Vertical Line */}
       <div
-        className={`absolute left-[11px] top-0 h-full w-px ${
-          theme === "light" ? "bg-[#EAEAEA]" : "bg-[#222222]"
+        className={`absolute left-[10px] top-0 h-full w-px ${
+          theme === "dark" ? "bg-white/20" : "bg-black/20"
         }`}
       />
 
@@ -22,44 +22,30 @@ export default function VerticalStepper({
               <div
                 className={`absolute left-[11px] top-0 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 transition-colors ${
                   isActive
-                    ? theme === "light"
-                      ? "bg-black border-black"
-                      : "bg-white border-white"
-                    : theme === "light"
-                    ? "bg-white border-gray-400 hover:bg-black hover:border-black"
-                    : "bg-black border-[#222222] hover:bg-white"
+                    ? theme === "dark"
+                      ? "bg-white border-white"
+                      : "bg-black border-black"
+                    : theme === "dark"
+                    ? "bg-[#111111] border-[#222222] hover:bg-white hover:border-white"
+                    : "bg-white border-[#EAEAEA] hover:bg-black hover:border-black"
                 }`}
               />
 
               {/* Step Content */}
               <div className="ml-8">
-                <h3
-                  className={`font-semibold text-sm leading-none ${
-                    theme === "light" ? "text-black" : "text-white"
-                  }`}
-                >
+                <h3 className="font-semibold text-sm leading-none text-foreground">
                   {step.title}
                 </h3>
 
                 <div className="mt-1 flex items-center justify-between">
                   {step.subtitle && (
-                    <p
-                      className={`text-xs ${
-                        theme === "light" ? "text-black" : "text-[#FFFFFF]"
-                      }`}
-                    >
+                    <p className="text-xs text-foreground/70">
                       {step.subtitle}
                     </p>
                   )}
 
                   {step.year && (
-                    <span
-                      className={`rounded-full border px-2 py-0.5 text-[10px] font-medium font-mono ${
-                        theme === "light"
-                          ? "border-[#EAEAEA]  text-black"
-                          : "border-[#222222]  text-white"
-                      }`}
-                    >
+                    <span className="rounded-full border border-foreground/20 px-2 py-0.5 text-[10px] font-medium font-mono text-foreground">
                       {step.year}
                     </span>
                   )}

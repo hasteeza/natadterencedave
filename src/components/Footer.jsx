@@ -8,15 +8,11 @@ const Footer = () => {
   return (
     <section
       className={`max-w-4xl mx-auto px-4 py-8 border-t mt-12 ${
-        theme === "dark" ? "border-[#222222]" : "border-[#EAEAEA]"
+        theme === "dark" ? "border-[#222222]" : "border-[#F3F4F6]"
       }`}
     >
       <div className="flex items-center justify-center">
-        <p
-          className={`text-sm ${
-            theme === "light" ? "text-black" : "text-white"
-          }`}
-        >
+        <p className="text-sm text-foreground">
           © 2026 Terence Dave Natad. All Rights Reserved
         </p>
       </div>
