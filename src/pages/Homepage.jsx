@@ -6,13 +6,14 @@ import {
   RiStackLine,
   RiTailwindCssFill,
   RiContactsBook3Line,
+  RiMessengerLine,
 } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
 import { SiNetlify } from "react-icons/si";
 import { SlPicture } from "react-icons/sl";
-import { LuComputer, LuBadgeCheck } from "react-icons/lu";
+import { LuComputer, LuBadgeCheck, LuGoal, LuPhone } from "react-icons/lu";
 import { CiLinkedin } from "react-icons/ci";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { MdArrowRightAlt, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { HiOutlineLinkSlash } from "react-icons/hi2";
 import {
   IoLogoReact,
@@ -54,9 +55,14 @@ export default function Homepage() {
       year: "2025",
     },
     {
+      title: "Capstone Project",
+      subtitle: "Frontend Developer",
+      year: "2024",
+    },
+    {
       title: "Hello World!",
       subtitle: "Wrote my first lines of code",
-      year: "2024",
+      year: "2022",
     },
   ];
 
@@ -75,7 +81,7 @@ export default function Homepage() {
       }`}
     >
       {/* ⬇️ CONTAINER — UNCHANGED */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-4 py-8">
         {/* PROFILE */}
         <motion.section
           variants={fadeUp}
@@ -487,11 +493,34 @@ export default function Homepage() {
                     </p>
                   </a>{" "}
                 </BentoCard>
+                <BentoCard
+                  className="p-3 space-y-1 hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                  theme={theme}
+                >
+                  {" "}
+                  <a
+                    target="_blank"
+                    className="block space-y-1"
+                    href="https://expo.dev/accounts/hasteeza/projects/Audalert/builds/03e54a08-235d-492d-b8c5-68c2ecf34293"
+                  >
+                    <h3 className="text-sm font-semibold">AudAlert</h3>
+                    <p className="text-xs">Soud Detection Intruder App </p>
+                    <p
+                      className={`text-xs font-mono px-2 py-1 rounded-md inline-block mt-1 ${
+                        theme === "dark"
+                          ? "text-white bg-black"
+                          : "text-black bg-[#EAEAEA]"
+                      }`}
+                    >
+                      expo.dev
+                    </p>
+                  </a>{" "}
+                </BentoCard>
               </div>
             </BentoCard>
             <BentoCard
               theme={theme}
-              className="p-4 col-span-1 md:col-span-4 space-y-2"
+              className="p-4 col-span-1 md:col-span-3 space-y-2"
             >
               <div>
                 <div className="inline-flex items-center gap-2">
@@ -558,78 +587,156 @@ export default function Homepage() {
             </BentoCard>
             <BentoCard
               theme={theme}
-              className="p-4 col-span-1 md:col-span-2 space-y-2"
+              className="p-4 col-span-1 md:col-span-3 space-y-2"
             >
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-2">
-                  <HiOutlineLinkSlash className="w-4 h-4" />
-                  <h3 className="text-lg font-semibold">Social Links</h3>
-                </div>
-                <div className="grid grid-cols-1 gap-2 mt-2">
-                  <a
-                    className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href="https://www.linkedin.com/in/terence-dave-natad-952b3b359/"
-                    target="_blank"
-                  >
-                    <CiLinkedin /> <span className="text-sm">Linkedin</span>
-                  </a>
-                  <a
-                    className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href="https://github.com/hasteeza"
-                    target="_blank"
-                  >
-                    {" "}
-                    <IoLogoGithub />
-                    <span className="text-sm">GitHub</span>
-                  </a>
-                  <a
-                    className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href="https://www.instagram.com/daevious404/"
-                    target="_blank"
-                  >
-                    <IoLogoInstagram />
-                    <span className="text-sm">Instagram</span>
-                  </a>
-                </div>
+              <div className="flex items-center justify-center">
+                <h3 className="text-lg font-semibold">Under Development</h3>
               </div>
-              <div className="mt-4">
-                <div className="inline-flex items-center gap-2 mb-2">
-                  <RiContactsBook3Line />
-                  <h3 className="font-semibold text-sm">Contact</h3>
-                </div>{" "}
-                <div className="grid grid-cols-1 gap-2">
+            </BentoCard>
+            <BentoCard
+              theme={theme}
+              className="p-6 col-span-1 md:col-span-6 space-y-2"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div>
+                  <div>
+                    <div className="inline-flex items-center gap-2">
+                      <LuGoal className="w-4 h-4" />
+                      <h3 className="text-sm font-semibold">Goals</h3>
+                    </div>
+                    <div className="space-y-2 mt-2">
+                      <p
+                        className={`text-[10px] p-2 rounded-lg border-0 ${
+                          theme === "dark"
+                            ? "bg-black hover:bg-gray-900"
+                            : "bg-[#F3F4F6] hover:bg-gray-200"
+                        }`}
+                      >
+                        I aim to grow in the IT industry by building a strong
+                        foundation in modern technologies and gaining real-world
+                        experience through meaningful projects.
+                      </p>
+                      <p
+                        className={`text-[10px] p-2 rounded-lg border-0 ${
+                          theme === "dark"
+                            ? "bg-black hover:bg-gray-900"
+                            : "bg-[#F3F4F6] hover:bg-gray-200"
+                        }`}
+                      >
+                        I am focused on improving my technical and
+                        problem-solving skills through consistent practice,
+                        learning, and hands-on development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
                   {" "}
-                  <a
-                    className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href="mailto:natadterencedave@gmail.com"
+                  <div className="inline-flex items-center gap-2">
+                    <HiOutlineLinkSlash className="w-4 h-4" />
+                    <h3 className="text-sm font-semibold">Social Links</h3>
+                  </div>
+                  <div className="grid grid-cols-1 gap-3 mt-4">
+                    <a
+                      className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                      href="https://www.linkedin.com/in/terence-dave-natad-952b3b359/"
+                      target="_blank"
+                    >
+                      <CiLinkedin /> <span className="text-xs">Linkedin</span>
+                    </a>
+                    <a
+                      className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                      href="https://github.com/hasteeza"
+                      target="_blank"
+                    >
+                      {" "}
+                      <IoLogoGithub />
+                      <span className="text-xs">GitHub</span>
+                    </a>
+                    <a
+                      className="inline-flex items-center gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                      href="https://www.instagram.com/daevious404/"
+                      target="_blank"
+                    >
+                      <IoLogoInstagram />
+                      <span className="text-xs">Instagram</span>
+                    </a>
+                  </div>
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-2 mb-2">
+                    <RiContactsBook3Line />
+                    <h3 className="font-semibold text-sm">Contact</h3>
+                  </div>{" "}
+                  <div
+                    className={`text-[11px] p-2 rounded-lg border-0 mt-4 ${
+                      theme === "dark"
+                        ? "bg-black hover:bg-gray-900"
+                        : "bg-[#F3F4F6] hover:bg-gray-200"
+                    }`}
                   >
-                    <div className="text-[9px]">
-                      <div className="inline-flex items-center gap-2">
-                        <Mail className="w-3 h-3" />
-                        Email
+                    Actively seeking opportunities in the IT industry to apply
+                    my technical skills, learn from real-world projects, and
+                    build a strong professional career.
+                    <br />
+                    <br />
+                    <span className="inline-flex items-center gap-2 font-semibold">
+                      Get in Touch <MdArrowRightAlt />
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <div className="grid grid-cols-1 gap-3 ">
+                    {" "}
+                    <a
+                      className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                      href="mailto:natadterencedave@gmail.com"
+                    >
+                      <div className="text-[9px]">
+                        <div className="inline-flex items-center gap-2">
+                          <Mail className="w-3 h-3" />
+                          Email
+                        </div>
+                        <div className="flex justify-between items-center gap-2">
+                          <p className="">natadterencedave@gmail.com</p>
+                          <MdOutlineKeyboardArrowRight />
+                        </div>
                       </div>
-                      <div className="flex justify-between items-center gap-2">
-                        <p className="">natadterencedave@gmail.com</p>
-                        <MdOutlineKeyboardArrowRight />
+                    </a>
+                    <a
+                      className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                      href=""
+                    >
+                      <div className="text-[9px]">
+                        <div className="inline-flex items-center gap-2">
+                          <LuPhone className="w-3 h-3" />
+                          Let's Talk
+                        </div>
+                        <div className="flex justify-between items-center gap-2">
+                          {" "}
+                          <p className="">9657-365-643</p>
+                          <MdOutlineKeyboardArrowRight />
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                  <a
-                    className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
-                    href="https://calendly.com/natadterencedave"
-                  >
-                    <div className="text-[9px]">
-                      <div className="inline-flex items-center gap-2">
-                        <Calendar className="w-3 h-3" />
-                        Let's Talk
+                    </a>
+                    <a
+                      className="gap-2 p-1.5 rounded-lg border hover:-translate-y-1 duration-200 transition-all hover:shadow-lg"
+                      target="_blank"
+                      href="https://www.facebook.com/terence.terence.75457081"
+                    >
+                      <div className="text-[9px]">
+                        <div className="inline-flex items-center gap-2">
+                          <RiMessengerLine className="w-3 h-3" />
+                          Messenger
+                        </div>
+                        <div className="flex justify-between items-center gap-2">
+                          {" "}
+                          <p className="">Chat With Me</p>
+                          <MdOutlineKeyboardArrowRight />
+                        </div>
                       </div>
-                      <div className="flex justify-between items-center gap-2">
-                        {" "}
-                        <p className="">Schedule a Call</p>
-                        <MdOutlineKeyboardArrowRight />
-                      </div>
-                    </div>
-                  </a>
+                    </a>
+                  </div>
                 </div>
               </div>
             </BentoCard>
