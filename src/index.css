@@ -59,6 +59,17 @@ body,
   font-display: swap;
 }
 
+<<<<<<< HEAD
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins.regular.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+=======
+>>>>>>> 5e12ddbbce4cc12a524e274adbfa51c300735d1a
 @keyframes marquee {
   from {
     transform: translateX(0);
