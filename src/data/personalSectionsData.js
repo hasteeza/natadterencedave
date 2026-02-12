@@ -55,7 +55,7 @@ export const personalSections = [
       {
         icon: LuPhone,
         label: "Let's Talk",
-        info: "9657-365-643",
+        info: "+639657-365-643",
         url: "",
       },
     ],
