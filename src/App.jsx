@@ -5,10 +5,6 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-<<<<<<< HEAD
-=======
-import Heropage from "./pages/Heropage";
->>>>>>> 5e12ddbbce4cc12a524e274adbfa51c300735d1a
 import Homepage from "./pages/Homepage";
 import AOS from "aos";
 import "./index.css";
@@ -40,12 +36,7 @@ function AppContent() {
 
   return (
     <Routes>
-<<<<<<< HEAD
       <Route path="/" element={<Homepage />} />
-=======
-      <Route path="/" element={<Heropage />} />
-      <Route path="/home" element={<Homepage />} />
->>>>>>> 5e12ddbbce4cc12a524e274adbfa51c300735d1a
     </Routes>
   );
 }
