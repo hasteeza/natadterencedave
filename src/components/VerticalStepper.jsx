@@ -45,11 +45,7 @@ export default function VerticalStepper({
                   )}
 
                   {step.year && (
-<<<<<<< HEAD
-                    <span className="rounded-full border-foreground/20 px-2 py-0.5 text-[11px] font-medium font-mono text-foreground">
-=======
-                    <span className="rounded-full border border-foreground/20 px-2 py-0.5 text-[10px] font-medium font-mono text-foreground">
->>>>>>> 5e12ddbbce4cc12a524e274adbfa51c300735d1a
+                    <span className="border-foreground/20 px-2 py-0.5 text-[11px] font-medium font-mono text-foreground">
                       {step.year}
                     </span>
                   )}
