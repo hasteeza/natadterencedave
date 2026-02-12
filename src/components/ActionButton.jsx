@@ -13,8 +13,13 @@ export function ActionButton({ icon: Icon, label, theme }) {
   } else if (isSendEmail) {
     href = "mailto:natadterencedave@gmail.com";
   } else if (isDownloadResume) {
+<<<<<<< HEAD
     href = "/TerenceDaveNatad_Resume.pdf";
     download = "TerenceDaveNatad_Resume.pdf";
+=======
+    href = "/Terence_Dave_R._Natad_Resume.pdf";
+    download = "Terence_Dave_Natad_Resume.pdf";
+>>>>>>> 5e12ddbbce4cc12a524e274adbfa51c300735d1a
   }
 
   return (
