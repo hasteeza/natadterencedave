@@ -15,7 +15,6 @@ import ExperienceCard from "../components/ExperienceCard.jsx";
 import { experienceSteps } from "../data/experienceSteps.js";
 import ProjectsCard from "../components/ProjectsCard.jsx";
 import CertificationsCard from "../components/CertificationsCard.jsx";
-import RecommendationCard from "../components/RecommendationCard.jsx";
 import PersonalSectionsCard from "../components/PersonalSectionsCard.jsx";
 
 export default function Homepage() {
@@ -55,7 +54,7 @@ export default function Homepage() {
       }`}
     >
       {/* ⬇️ CONTAINER — UNCHANGED */}
-      <div className="max-w-4xl mx-auto px-4 py-8 [font-family:Poppins]">
+      <div className="max-w-5xl mx-auto px-4 py-8 [font-family:Poppins]">
         {/* PROFILE */}
         <motion.section
           variants={fadeUp}
@@ -148,7 +147,6 @@ export default function Homepage() {
                 className="mt-2 text-[10px] md:text-lg"
                 text={[
                   "Frontend Developer",
-                  "Vibe Coder",
                   "Aspiring Photographer",
                   "UI/UX Designer",
                   "Tech Enthusiast",
@@ -241,6 +239,10 @@ export default function Homepage() {
               <TechStack theme={theme} />
             </BentoCard>
 
+             <BentoCard theme={theme} className="col-span-1 md:col-span-6">
+              <ProjectsCard theme={theme} />
+            </BentoCard>
+
             {/* CARD 4 — WIDE */}
             <BentoCard
               theme={theme}
@@ -259,18 +261,10 @@ export default function Homepage() {
                 </p>
               </div>
             </BentoCard>
-           
-            <BentoCard theme={theme} className="col-span-1 md:col-span-4">
-              <ProjectsCard theme={theme} />
-            </BentoCard>
                       
-            <BentoCard theme={theme} className="col-span-1 md:col-span-3">
+            <BentoCard theme={theme} className="col-span-1 md:col-span-4">
               <CertificationsCard theme={theme} />
             </BentoCard>      
-
-            <BentoCard theme={theme} className="p-4 col-span-1 md:col-span-3 space-y-2">
-              <RecommendationCard theme={theme} />
-            </BentoCard>
 
             <BentoCard theme={theme} className="p-4 col-span-1 md:col-span-6 space-y-2">
               <PersonalSectionsCard theme={theme} />
