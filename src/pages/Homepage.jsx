@@ -72,8 +72,8 @@ export default function Homepage() {
               decoding="async"
               src={
                 theme === "dark"
-                  ? "/images/me-in-pm.jpg"
-                  : "/images/me-in-am.jpg"
+                  ? "/images/me-in-pm.png"
+                  : "/images/me-in-am.png"
               }
               alt="Portrait of Terence Dave Natad"
               className="object-cover
@@ -147,8 +147,8 @@ export default function Homepage() {
                 className="mt-2 text-[10px] md:text-lg"
                 text={[
                   "Frontend Developer",
+                  "Software Tester",
                   "Aspiring Photographer",
-                  "UI/UX Designer",
                   "Tech Enthusiast",
                 ]}
                 typingSpeed={150}
@@ -207,19 +207,12 @@ export default function Homepage() {
                 <h3 className="font-semibold text-lg">About Me</h3>
               </div>
               <p className="text-sm leading-relaxed mt-2">
-                I'm a front-end developer and UI/UX designer who loves creating
-                websites and apps that are easy to use and look great. I work
-                mostly with React.js and Figma, turning design ideas into
-                smooth, responsive user interfaces.
+                I’m a front-end developer currently upskilling in software testing, passionate about building reliable and high-quality software. I enjoy diving deep into code, exploring modern tools, and ensuring that applications work smoothly and efficiently.
                 <br />
                 <br />
-                I’m always learning new front-end skills, exploring modern
-                tools, and finding ways to write clean, efficient code. I enjoy
-                combining design and development to build apps that are both
-                functional and visually appealing.
+                I’m always learning new skills in software testing, from automated testing frameworks to quality assurance best practices, and applying them to make software more robust and user-friendly.
                 <br /> <br />
-                My goal is to create digital experiences that are helpful,
-                enjoyable, and make a real impact for users and businesses.
+                My goal is to contribute to creating digital experiences that are not only functional and visually appealing but also dependable, efficient, and impactful for users and businesses.
               </p>
             </BentoCard>
 

@@ -45,10 +45,10 @@ const PersonalSectionsCard = () => {
 
             {/* Contact section */}
             {section.text && (
-              <div className="text-[11px] p-2 mt-4">
+              <div className="text-[11px] p-4 mt-4">
                 {section.text}
                 {section.buttonText && (
-                  <div className="mt-2 inline-flex items-center gap-2 font-semibold">
+                  <div className="mt-4 inline-flex items-center gap-2 font-semibold">
                     {section.buttonText} <section.buttonIcon />
                   </div>
                 )}
