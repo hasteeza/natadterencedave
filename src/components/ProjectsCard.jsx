@@ -12,12 +12,12 @@ const ProjectsCard = ({ theme }) => {
 
   const activeButtonStyle =
     theme === "dark"
-      ? "bg-white text-slate-950 border border-slate-200 shadow-lg"
+      ? "bg-white text-black border border-slate-200 shadow-lg"
       : "bg-[#111111] text-white border border-slate-950 shadow-lg";
 
   const inactiveButtonStyle =
     theme === "dark"
-      ? "bg-slate-950 text-slate-200 border border-slate-800 hover:bg-slate-900"
+      ? "bg-[#000000] text-white border border-[#333333] hover:bg-slate-900"
       : "bg-[#FAFAFA] text-slate-950 border border-slate-200 hover:bg-slate-100";
 
   const filteredProjects = useMemo(
@@ -50,7 +50,7 @@ const ProjectsCard = ({ theme }) => {
         })}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
             <ProjectItem
@@ -60,7 +60,13 @@ const ProjectsCard = ({ theme }) => {
             />
           ))
         ) : (
-          <div className="col-span-full rounded-2xl border border-slate-200 bg-white/70 p-6 text-sm text-slate-600 shadow-sm dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-300">
+          <div
+            className={`col-span-full rounded-2xl border p-6 text-sm shadow-sm ${
+              theme === "dark"
+                ? "border-[#333333] bg-[#111111] text-slate-300"
+                : "border-slate-200 bg-white/70 text-slate-600"
+            }`}
+          >
             No projects found for {activeCategory} yet.
           </div>
         )}
