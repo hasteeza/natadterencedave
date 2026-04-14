@@ -3,18 +3,14 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
 } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import AOS from "aos";
 import "./index.css";
 import { useTheme } from "./contexts/ThemeContext";
-import { useHeroBg } from "./contexts/HeroBgContext";
 
 function AppContent() {
-  const location = useLocation();
   const { theme } = useTheme();
-  const { heroBgColor } = useHeroBg();
 
   useEffect(() => {
     AOS.init({
@@ -26,13 +22,8 @@ function AppContent() {
   }, []);
 
   useEffect(() => {
-    if (location.pathname === "/") {
-      document.body.style.backgroundColor = heroBgColor;
-    } else if (location.pathname === "/home") {
-      document.body.style.backgroundColor =
-        theme === "dark" ? "black" : "white";
-    }
-  }, [location.pathname, theme, heroBgColor]);
+    document.body.style.backgroundColor = theme === "dark" ? "black" : "white";
+  }, [theme]);
 
   return (
     <Routes>

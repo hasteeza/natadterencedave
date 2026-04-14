@@ -20,26 +20,27 @@ const ProjectItem = ({ project, theme }) => {
 
   return (
     <div
-      className={`border overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-1 ${cardBg}`}
+      className={`border overflow-hidden rounded-lg shadow-sm md:shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-1 ${cardBg}`}
     >
       {/* Image */}
-      <div className="w-full h-60 overflow-hidden bg-gray-300">
+      <div className="w-full h-auto overflow-hidden bg-gray-300 rounded-t-lg">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+          loading="lazy"
+          className="w-full h-auto object-contain transition-transform duration-200"
         />
       </div>
 
       {/* Content */}
-      <div className="p-4 space-y-3">
+      <div className="p-3 md:p-4 space-y-3">
         {/* Title */}
-        <h3 className="text-lg font-semibold">
+        <h3 className="text-base md:text-lg font-semibold">
           {project.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm opacity-75">
+        <p className="text-xs md:text-sm opacity-75">
           {project.description}
         </p>
 
@@ -56,7 +57,7 @@ const ProjectItem = ({ project, theme }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-2 pt-2">
+        <div className="flex flex-col sm:flex-row gap-2 pt-2">
           <a
             href={project.url}
             target="_blank"

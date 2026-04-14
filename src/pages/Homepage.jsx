@@ -54,7 +54,7 @@ export default function Homepage() {
       }`}
     >
       {/* ⬇️ CONTAINER — UNCHANGED */}
-      <div className="max-w-5xl mx-auto px-4 py-8 [font-family:Poppins]">
+      <div className="max-w-5xl mx-auto px-3 md:px-4 py-8 [font-family:Poppins]">
         {/* PROFILE */}
         <motion.section
           variants={fadeUp}
@@ -63,7 +63,7 @@ export default function Homepage() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="mb-10"
         >
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex flex-row sm:items-center gap-3 sm:gap-4 md:gap-6">
             {/* Avatar */}
             <img
               fetchPriority="high"
@@ -76,12 +76,8 @@ export default function Homepage() {
                   : "/images/me-in-am.png"
               }
               alt="Portrait of Terence Dave Natad"
-              className="object-cover
-                w-40 h-40
-                shrink-0
-                "
+              className="object-cover w-40 h-40 min-w-[10rem] min-h-[10rem] max-w-[10rem] max-h-[10rem] flex-shrink-0"
             />
-
             {/* Info */}
             <div className="flex-1 min-w-0">
               {/* Name + Toggle */}
@@ -144,7 +140,7 @@ export default function Homepage() {
 
               {/* Role */}
               <TextType
-                className="mt-2 text-[10px] md:text-lg"
+                className="mt-2 text-xs md:text-lg"
                 text={[
                   "Frontend Developer",
                   "Software Tester",
